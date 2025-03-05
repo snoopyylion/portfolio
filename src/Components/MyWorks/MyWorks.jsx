@@ -34,7 +34,7 @@ const MyWorks = () => {
 
       {/* Show More Button */}
       <div className="mt-12 text-center">
-        <button className="flex items-center justify-center mx-auto font-semibold px-6 py-3 rounded-full shadow-md border border-white hover:bg-blue-600 transition duration-300">
+        <button className="flex items-center justify-center mx-auto font-semibold p-2 rounded-lg shadow-lg border border-white  transform hover:scale-105 hover:border-pink-500 hover:bg-gradient-to-br hover:from-[#3f0028] hover:to-[#582300] transition duration-300">
           <span className="mr-2">Show More</span>
           <img src={arrow_icon} alt="Arrow Icon" className="w-4 h-4" />
         </button>
