@@ -8,7 +8,7 @@ import project7_img from '../assets/work7.png'
 import project9_img from '../assets/work9.png'
 import project10_img from '../assets/work10.png'
 import project11_img from '../assets/work12.png'
-import project12_img from '../assets/blogpost.png'
+import project12_img from '../assets/blogpost2.png'
 import project13_img from '../assets/Aftermath.png'
 import project14_img from '../assets/work13.png'
 
