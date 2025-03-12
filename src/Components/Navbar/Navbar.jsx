@@ -1,41 +1,70 @@
-import React, { useRef, useState } from 'react'
-import './Navbar.css'
-import theme_pattern from '../../assets/logoline.jpg'
-import underline from '../../assets/nav_underline.svg'
-import  AnchorLink  from 'react-anchor-link-smooth-scroll'
-import menu_open from '../../assets/menu_open.svg'
-import menu_close from '../../assets/menu_close.svg'
+import React, { useEffect, useRef, useState } from "react";
+import "./Navbar.css";
+import theme_pattern from "../../assets/logoline.jpg";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import menu_open from "../../assets/menu_open.svg";
+import menu_close from "../../assets/menu_close.svg";
 
 const Navbar = () => {
-  const [menu,setMenu] = useState("home");
+  const [menu, setMenu] = useState("home");
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const menuRef = useRef();
 
-  const openMenu = () =>{
-    menuRef.current.style.right="0";
-  }
-  const closeMenu = () =>{
-    menuRef.current.style.right="-350px";
-  }
+  const openMenu = () => {
+    menuRef.current.style.right = "0";
+  };
+
+  const closeMenu = () => {
+    menuRef.current.style.right = "-350px";
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowNavbar(false); // Hide navbar when scrolling down
+      } else {
+        setShowNavbar(true); // Show navbar when scrolling up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <div className='flex items-center justify-between py-5 font-medium '>
+    <div className={`navbar ${showNavbar ? "navbar-visible" : "navbar-hidden"}`}>
+      <div className="navbar-container">
         <div className="logo">
-            <h1>Oluwaseyi</h1>
-            <img src={theme_pattern} alt="" />
-        </div> 
-        <img src={menu_open} onClick={openMenu} alt=""  className='nav-mob-open'/>
+          <h1>Oluwaseyi</h1>
+          <img src={theme_pattern} alt="Theme Pattern" />
+        </div>
+        <img src={menu_open} onClick={openMenu} alt="Open Menu" className="nav-mob-open" />
         <ul ref={menuRef} className="nav-menu">
-          <img src={menu_close} onClick={closeMenu} alt="" className="nav-mob-close" />
-            <li><AnchorLink className='anchor-link'  href='#home'><p onClick={()=>setMenu("home")}>Home</p></AnchorLink>{menu==="home"?<img src={underline} alt="" />:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#about'><p onClick={()=>setMenu("about")}>About Me</p></AnchorLink>{menu==="about"?<img src={underline} alt="" />:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#services'><p onClick={()=>setMenu("services")}>Services</p></AnchorLink>{menu==="services"?<img src={underline} alt="" />:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#work'><p onClick={()=>setMenu("work")}>Portfolio</p></AnchorLink>{menu==="work"?<img src={underline} alt="" />:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>setMenu("contact")}>Contact</p></AnchorLink>{menu==="contact"?<img src={underline} alt="" />:<></>}</li>
+          <img src={menu_close} onClick={closeMenu} alt="Close Menu" className="nav-mob-close" />
+          {["home", "about", "services", "work", "contact"].map((item) => (
+            <li key={item} className={menu === item ? "active" : ""}>
+              <AnchorLink className="anchor-link" offset={50} href={`#${item}`} onClick={() => setMenu(item)}>
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </AnchorLink>
+              <div className={menu === item ? "tiny-line" : ""}></div>
+            </li>
+          ))}
         </ul>
         <div className="nav-connect">
-        <AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>setMenu("contact")}>Connect With Me</p></AnchorLink>
+          <AnchorLink className="anchor-link" offset={50} href="#contact" onClick={() => setMenu("contact")}>
+            Connect With Me
+          </AnchorLink>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
