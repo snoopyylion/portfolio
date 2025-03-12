@@ -6,7 +6,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div data-aos="slide-up" data-aos-duration="900" className="Footer bg-[#161513] text-white py-10 px-4 sm:px-6 md:px-12 lg:px-24">
+    <div data-aos="slide-up" data-aos-duration="1500" className="Footer bg-[#161513] text-white py-10 px-4 sm:px-6 md:px-12 lg:px-24">
       {/* Footer Top Section */}
       <div className="footer-top flex flex-col lg:flex-row justify-between items-start gap-8">
         {/* Footer Left Section */}

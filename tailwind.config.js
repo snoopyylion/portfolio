@@ -7,9 +7,12 @@ export default {
   theme: {
     extend: {
       screens: {
-        'xs': '200px', // custom breakpoint for screens 440px and below
+        'xs': '200px', // custom breakpoint for very small screens
+      },
+      colors: {
+        customGray: "#ddd", // Added custom gray color
       },
     },
   },
   plugins: [],
-}
+};

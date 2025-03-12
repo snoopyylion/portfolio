@@ -4,10 +4,10 @@ import arrow_icon from '../../assets/arrow_icon.svg';
 
 const Services = () => {
   return (
-    <section id="services" data-aos="slide-up" data-aos-duration="900" className="services py-12 px-4 md:px-8 lg:px-16 bg-[#161513] text-white">
+    <section id="services" data-aos="slide-up" data-aos-duration="3000" className="services py-12 px-4 md:px-8 lg:px-16 bg-[#161513] text-white">
       {/* Section Heading */}
       <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">My Services</h1>
+        <h1 className="text-4xl prata-regular md:text-6xl font-bold mb-5">My Services</h1>
       </div>
 
       {/* Services Container */}

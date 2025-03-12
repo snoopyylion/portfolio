@@ -4,10 +4,10 @@ import arrow_icon from '../../assets/arrow_icon.svg';
 
 const MyWorks = () => {
   return (
-    <section id="work" data-aos="slide-up" data-aos-duration="900" className="py-12 px-4 md:px-8 lg:px-16 bg-[#161513] text-white">
+    <section id="work" data-aos="slide-up" data-aos-duration="1500" className="py-12 px-4 md:px-8 lg:px-16 bg-[#161513] text-white">
       {/* Section Heading */}
       <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">My Latest Work</h1>
+        <h1 className="text-4xl prata-regular md:text-6xl font-bold mb-5">My Latest Work</h1>
       </div>
 
       {/* Work Items */}

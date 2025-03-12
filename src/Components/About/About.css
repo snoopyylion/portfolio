@@ -14,11 +14,15 @@
     font-size: 80px;
     font-weight: 600;
 }
-.about-title img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+.snoopy-img {
+    margin-top: 80px;
+    width: 250px;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.snoopy-img:hover {
+    transform: scale(1.05);
 }
 .about-section{
     display: flex;
