@@ -104,7 +104,7 @@
   }
 @media (max-width:768px){
     .Footer{
-        margin: 50px 70px;
+        margin: 20px 40px;
     }
     .footer-top{
         flex-direction: column;
@@ -112,8 +112,12 @@
     }
     .footer-bottom{
         display: flex;
+        gap: 50px;
         flex-direction: column-reverse;
         margin-bottom: 50px;
+    }
+    .footer-bottom p{
+           font-size: 12px; 
     }
 
 }
