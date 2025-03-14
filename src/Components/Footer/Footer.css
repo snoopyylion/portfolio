@@ -74,6 +74,34 @@
     z-index: -1;
     width: 50px;
 }
+/* Footer Divider */
+.footer-divider {
+    border: 1px solid #333;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-link {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .footer-link:hover {
+    color: #ec4899;
+    text-decoration: underline;
+  }
 @media (max-width:768px){
     .Footer{
         margin: 50px 70px;

@@ -1,7 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import theme_pattern from '../../assets/theme_pattern.svg';
 import user_icon from '../../assets/user_icon.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -20,6 +22,59 @@ const Footer = () => {
             responsive web applications. My expertise spans across both front-end and back-end technologies, allowing me
             to deliver cohesive and engaging user experiences.
           </p>
+          {/* Social Icons Section */}
+          <motion.div 
+                  className="hero-social-icons"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 1.5 }}
+                >
+                  {/* GitHub */}
+                  <motion.a 
+                    href="https://github.com/snoopyylion" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="social-icon"
+                  >
+                    <FaGithub className="text-gray-300 text-2xl md:text-3xl hover:text-white transition" />
+                  </motion.a>
+          
+                  {/* LinkedIn */}
+                  <motion.a 
+                    href="https://www.linkedin.com/in/oluwaseyi-tifase-3a61aa27b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="social-icon"
+                  >
+                    <FaLinkedin className="text-gray-300 text-2xl md:text-3xl hover:text-blue-500 transition" />
+                  </motion.a>
+          
+                  {/* Twitter */}
+                  <motion.a 
+                    href="https://x.com/snoopylion_?s=21" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="social-icon"
+                  >
+                    <FaTwitter className="text-gray-300 text-2xl md:text-3xl hover:text-blue-400 transition" />
+                  </motion.a>
+          
+                  {/* Email */}
+                  <motion.a 
+                    href="mailto:tifase_oluwaseyi@yahoo.com"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="social-icon"
+                  >
+                    <FaEnvelope className="text-gray-300 text-2xl md:text-3xl hover:text-red-500 transition" />
+                  </motion.a>
+                </motion.div>
         </div>
 
         {/* Footer Right Section - Subscribe */}
@@ -38,23 +93,16 @@ const Footer = () => {
         </div>
       </div>
 
-      <hr className="my-8 border-gray-700" />
 
       {/* Footer Bottom Section */}
-      <div className="footer-bottom flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-        {/* Footer Left */}
-        <p className="footer-bottom-left text-center md:text-left">
-          © 2024 Tifase Oluwaseyi. All rights reserved.
-        </p>
-
-        {/* Footer Right */}
-        <div className="footer-bottom-right flex flex-col md:flex-row gap-4 text-center md:text-right">
-          <p className="cursor-pointer hover:underline">Terms of Services</p>
-          <p className="cursor-pointer hover:underline">Privacy Policy</p>
-          <AnchorLink className="anchor-link" offset={50} href="#contact">
-            <p className="cursor-pointer hover:underline">
-              Connect With Me
-            </p>
+      <hr className="footer-divider" />
+      <div className="footer-bottom">
+        <p>© 2024 Tifase Oluwaseyi. All rights reserved.</p>
+        <div className="footer-links">
+          <p className="footer-link">Terms of Service</p>
+          <p className="footer-link">Privacy Policy</p>
+          <AnchorLink offset={50} href="#contact">
+            <p className="footer-link">Connect With Me</p>
           </AnchorLink>
         </div>
       </div>
