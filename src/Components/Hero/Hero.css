@@ -68,13 +68,13 @@
 .hero-resume {
     padding: 15px 40px;
     border-radius: 40px;
-    border: 2px solid white;
+    border: 1px solid white;
     cursor: pointer;
     transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero-resume:hover {
-    border-color: #b415ff;
+    border: 1px solid #ec4899;
     transform: scale(1.05);
 }
 
@@ -94,7 +94,7 @@
     }
 
     .hero-action {
-        flex-direction: column;
+        flex-direction: row;
     }
 }
 
