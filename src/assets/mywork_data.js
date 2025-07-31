@@ -20,7 +20,7 @@ import dashboardDemo_img from '../assets/farmland.png'; // Add your dashboard im
 const mywork_data = [
     {
         w_no: 1,
-        w_name: "Hojo Media – Real-time News Verification & Social Messaging Platform Built with Next.js, Supabase, Clerk, and Sanity",
+        w_name: "Hojo Media – Fullstack Real-time News Verification & Messaging Platform with WebSocket Infrastructure, Built Using Next.js, Supabase, Clerk, and Sanity",
         w_img: project17_img,
         w_link: "https://hojo-radio.vercel.app/",
         git_hub: "https://github.com/snoopyylion/hojo-radio",
