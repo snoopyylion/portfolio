@@ -22,6 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ignore unwanted injected files
+
+# environment
+.env
 branch_structure.json
 temp_auto_push.bat
 temp_interactive_push.bat
